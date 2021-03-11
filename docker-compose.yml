@@ -1,0 +1,21 @@
+version: '3.7'
+services:
+  db:
+    container_name: db
+    image: mysql:5.7.29
+    command: mysqld --character-set-server=utf8 --collation-server=utf8_unicode_ci
+    restart: always
+    ports:
+      - '3306:3306'
+    env_file: 
+      - .env
+    volumes: 
+      - ./data:/var/lib/mysql
+  adminer:
+    container_name: adminer
+    image: adminer
+    restart: always
+    links:
+      - db 
+    ports:
+      - 20380:8080

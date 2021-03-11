@@ -1,0 +1,10 @@
+/.git
+/dist
+/docs
+/dynamodb-data
+/dynamodb-local-admin
+/migrations
+/mock
+/mocks
+/node_modules
+/data
